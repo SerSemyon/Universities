@@ -19,6 +19,7 @@ namespace Universities
 
         private void LoadCities()
         {
+            cityComboBox.Items.Add("Все города");
             StreamReader reader = new StreamReader("City.txt");
             string? line;
             while ((line = reader.ReadLine()) != null)
@@ -40,12 +41,13 @@ namespace Universities
                 string[] words = line.Replace(",", "").Split();
                 string name = words[1];
                 int cityId = Convert.ToInt32(words[2]);
-                int id = Convert.ToInt32(words[3]);
+                University.counter = Convert.ToInt32(words[3]);
                 allUniversities.Add(new University()
                 {
-                    id = id,
+                    id = University.counter,
                     name = name,
-                    cityName = Cities[cityId]
+                    cityName = Cities[cityId],
+                    imagePath = "Images\\" + University.counter + " " + name + ".jpg"
                 });
             }
             selectedUnivesities = allUniversities;
@@ -60,7 +62,7 @@ namespace Universities
 
         private void addToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormUniversity formUniversity = new FormUniversity();
+            FormUniversity formUniversity = new FormUniversity(CreateUniversity);
             formUniversity.ShowDialog();
         }
 
@@ -68,7 +70,7 @@ namespace Universities
         {
             int id = DetectSelectedUniversity();
             University selectedUniversity = allUniversities.FirstOrDefault(x => x.id == id);
-            FormUniversity formUniversity = new FormUniversity(selectedUniversity, true);
+            FormUniversity formUniversity = new FormUniversity(selectedUniversity, ChangeUniversity);
             formUniversity.ShowDialog();
         }
 
@@ -80,15 +82,9 @@ namespace Universities
             dataGridViewUniversities.DataSource = selectedUnivesities;
         }
 
-        private void dataGridViewUniversities_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void cityComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            selectedUnivesities = allUniversities.Where(u => u.cityName == cityComboBox.SelectedItem.ToString()).ToList();
-            dataGridViewUniversities.DataSource = selectedUnivesities;
+            RefreshData();
         }
 
         private int DetectSelectedUniversity()
@@ -96,6 +92,39 @@ namespace Universities
             int selectedRow = dataGridViewUniversities.CurrentRow.Index;
             string id = dataGridViewUniversities.Rows[selectedRow].Cells[0].Value.ToString();
             return Convert.ToInt32(id);
+        }
+
+        private void RefreshData()
+        {
+            if (cityComboBox.SelectedItem != null && cityComboBox.Text != "Все города")
+            {
+                selectedUnivesities = allUniversities.Where(u => u.cityName == cityComboBox.SelectedItem.ToString()).ToList();
+                dataGridViewUniversities.DataSource = selectedUnivesities;
+            }
+            else
+            {
+                dataGridViewUniversities.DataSource = allUniversities.ToList();
+            }
+        }
+
+        public void ChangeUniversity(University university, int id)
+        {
+            allUniversities[id - 1] = university;
+            RefreshData();
+        }
+
+        public void CreateUniversity(University university)
+        {
+            allUniversities.Add(university);
+            RefreshData();
+        }
+
+        private void dataGridViewUniversities_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int id = DetectSelectedUniversity();
+            University selectedUniversity = allUniversities.FirstOrDefault(x => x.id == id);
+            FormUniversity formUniversity = new FormUniversity(selectedUniversity, ChangeUniversity, true);
+            formUniversity.ShowDialog();
         }
     }
 }

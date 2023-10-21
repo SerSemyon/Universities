@@ -58,12 +58,13 @@
             mainTableLayoutPanel.Controls.Add(splitContainer1, 0, 2);
             mainTableLayoutPanel.Dock = DockStyle.Fill;
             mainTableLayoutPanel.Location = new Point(0, 0);
+            mainTableLayoutPanel.Margin = new Padding(3, 4, 3, 4);
             mainTableLayoutPanel.Name = "mainTableLayoutPanel";
             mainTableLayoutPanel.RowCount = 3;
-            mainTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 96F));
+            mainTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 128F));
             mainTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            mainTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
-            mainTableLayoutPanel.Size = new Size(800, 450);
+            mainTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 53F));
+            mainTableLayoutPanel.Size = new Size(914, 600);
             mainTableLayoutPanel.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -77,56 +78,59 @@
             tableLayoutPanel2.Controls.Add(textBoxCity, 1, 2);
             tableLayoutPanel2.Controls.Add(labelUniversity, 1, 0);
             tableLayoutPanel2.Dock = DockStyle.Fill;
-            tableLayoutPanel2.Location = new Point(3, 3);
+            tableLayoutPanel2.Location = new Point(3, 4);
+            tableLayoutPanel2.Margin = new Padding(3, 4, 3, 4);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 3;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel2.Size = new Size(794, 90);
+            tableLayoutPanel2.Size = new Size(908, 120);
             tableLayoutPanel2.TabIndex = 0;
             // 
             // labelName
             // 
             labelName.AutoSize = true;
-            labelName.Location = new Point(3, 30);
+            labelName.Location = new Point(3, 39);
             labelName.Name = "labelName";
-            labelName.Size = new Size(59, 15);
+            labelName.Size = new Size(77, 20);
             labelName.TabIndex = 0;
             labelName.Text = "Название";
             // 
             // labelCity
             // 
             labelCity.AutoSize = true;
-            labelCity.Location = new Point(3, 60);
+            labelCity.Location = new Point(3, 78);
             labelCity.Name = "labelCity";
-            labelCity.Size = new Size(40, 15);
+            labelCity.Size = new Size(51, 20);
             labelCity.TabIndex = 1;
             labelCity.Text = "Город";
             // 
             // textBoxName
             // 
             textBoxName.Dock = DockStyle.Fill;
-            textBoxName.Location = new Point(259, 33);
+            textBoxName.Location = new Point(295, 43);
+            textBoxName.Margin = new Padding(3, 4, 3, 4);
             textBoxName.Name = "textBoxName";
-            textBoxName.Size = new Size(532, 23);
+            textBoxName.Size = new Size(610, 27);
             textBoxName.TabIndex = 2;
             // 
             // textBoxCity
             // 
             textBoxCity.Dock = DockStyle.Fill;
-            textBoxCity.Location = new Point(259, 63);
+            textBoxCity.Location = new Point(295, 82);
+            textBoxCity.Margin = new Padding(3, 4, 3, 4);
             textBoxCity.Name = "textBoxCity";
-            textBoxCity.Size = new Size(532, 23);
+            textBoxCity.Size = new Size(610, 27);
             textBoxCity.TabIndex = 3;
             // 
             // labelUniversity
             // 
             labelUniversity.AutoSize = true;
             labelUniversity.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            labelUniversity.Location = new Point(259, 0);
+            labelUniversity.Location = new Point(295, 0);
             labelUniversity.Name = "labelUniversity";
-            labelUniversity.Size = new Size(129, 25);
+            labelUniversity.Size = new Size(162, 32);
             labelUniversity.TabIndex = 4;
             labelUniversity.Text = "Университет";
             labelUniversity.TextAlign = ContentAlignment.MiddleCenter;
@@ -134,9 +138,10 @@
             // pictureBox
             // 
             pictureBox.Dock = DockStyle.Fill;
-            pictureBox.Location = new Point(3, 99);
+            pictureBox.Location = new Point(3, 132);
+            pictureBox.Margin = new Padding(3, 4, 3, 4);
             pictureBox.Name = "pictureBox";
-            pictureBox.Size = new Size(794, 308);
+            pictureBox.Size = new Size(908, 411);
             pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox.TabIndex = 1;
             pictureBox.TabStop = false;
@@ -145,7 +150,8 @@
             // splitContainer1
             // 
             splitContainer1.Dock = DockStyle.Fill;
-            splitContainer1.Location = new Point(3, 413);
+            splitContainer1.Location = new Point(3, 551);
+            splitContainer1.Margin = new Padding(3, 4, 3, 4);
             splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -155,17 +161,18 @@
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.Controls.Add(buttonCancel);
-            splitContainer1.Size = new Size(794, 34);
-            splitContainer1.SplitterDistance = 384;
+            splitContainer1.Size = new Size(908, 45);
+            splitContainer1.SplitterDistance = 438;
+            splitContainer1.SplitterWidth = 5;
             splitContainer1.TabIndex = 2;
-            splitContainer1.SplitterMoved += splitContainer1_SplitterMoved;
             // 
             // buttonSave
             // 
             buttonSave.Dock = DockStyle.Fill;
             buttonSave.Location = new Point(0, 0);
+            buttonSave.Margin = new Padding(3, 4, 3, 4);
             buttonSave.Name = "buttonSave";
-            buttonSave.Size = new Size(384, 34);
+            buttonSave.Size = new Size(438, 45);
             buttonSave.TabIndex = 0;
             buttonSave.Text = "Сохранить";
             buttonSave.UseVisualStyleBackColor = true;
@@ -175,8 +182,9 @@
             // 
             buttonCancel.Dock = DockStyle.Fill;
             buttonCancel.Location = new Point(0, 0);
+            buttonCancel.Margin = new Padding(3, 4, 3, 4);
             buttonCancel.Name = "buttonCancel";
-            buttonCancel.Size = new Size(406, 34);
+            buttonCancel.Size = new Size(465, 45);
             buttonCancel.TabIndex = 0;
             buttonCancel.Text = "Отменить";
             buttonCancel.UseVisualStyleBackColor = true;
@@ -188,10 +196,11 @@
             // 
             // FormUniversity
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
             Controls.Add(mainTableLayoutPanel);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "FormUniversity";
             Text = "FormUniversity";
             mainTableLayoutPanel.ResumeLayout(false);

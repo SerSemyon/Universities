@@ -50,80 +50,87 @@
             tableLayoutPanel1.Controls.Add(cityComboBox, 0, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 3;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(800, 450);
+            tableLayoutPanel1.Size = new Size(914, 600);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // dataGridViewUniversities
             // 
             dataGridViewUniversities.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewUniversities.Dock = DockStyle.Fill;
-            dataGridViewUniversities.Location = new Point(3, 63);
+            dataGridViewUniversities.Location = new Point(3, 84);
+            dataGridViewUniversities.Margin = new Padding(3, 4, 3, 4);
             dataGridViewUniversities.MultiSelect = false;
             dataGridViewUniversities.Name = "dataGridViewUniversities";
             dataGridViewUniversities.ReadOnly = true;
+            dataGridViewUniversities.RowHeadersWidth = 51;
             dataGridViewUniversities.RowTemplate.Height = 25;
-            dataGridViewUniversities.Size = new Size(794, 384);
+            dataGridViewUniversities.Size = new Size(908, 512);
             dataGridViewUniversities.TabIndex = 0;
-            dataGridViewUniversities.CellContentClick += dataGridViewUniversities_CellContentClick;
+            dataGridViewUniversities.CellDoubleClick += dataGridViewUniversities_CellDoubleClick;
             // 
             // menuStrip1
             // 
+            menuStrip1.ImageScalingSize = new Size(20, 20);
             menuStrip1.Items.AddRange(new ToolStripItem[] { addToolStripMenuItem, changeToolStripMenuItem, deleteToolStripMenuItem, exitToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 24);
+            menuStrip1.Padding = new Padding(7, 3, 0, 3);
+            menuStrip1.Size = new Size(914, 30);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             // 
             // addToolStripMenuItem
             // 
             addToolStripMenuItem.Name = "addToolStripMenuItem";
-            addToolStripMenuItem.Size = new Size(71, 20);
+            addToolStripMenuItem.Size = new Size(90, 24);
             addToolStripMenuItem.Text = "Добавить";
             addToolStripMenuItem.Click += addToolStripMenuItem_Click;
             // 
             // changeToolStripMenuItem
             // 
             changeToolStripMenuItem.Name = "changeToolStripMenuItem";
-            changeToolStripMenuItem.Size = new Size(73, 20);
+            changeToolStripMenuItem.Size = new Size(92, 24);
             changeToolStripMenuItem.Text = "Изменить";
             changeToolStripMenuItem.Click += changeToolStripMenuItem_Click;
             // 
             // deleteToolStripMenuItem
             // 
             deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            deleteToolStripMenuItem.Size = new Size(63, 20);
+            deleteToolStripMenuItem.Size = new Size(79, 24);
             deleteToolStripMenuItem.Text = "Удалить";
             deleteToolStripMenuItem.Click += deleteToolStripMenuItem_Click;
             // 
             // exitToolStripMenuItem
             // 
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(54, 20);
+            exitToolStripMenuItem.Size = new Size(67, 24);
             exitToolStripMenuItem.Text = "Выход";
             exitToolStripMenuItem.Click += exitToolStripMenuItem_Click_1;
             // 
             // cityComboBox
             // 
             cityComboBox.FormattingEnabled = true;
-            cityComboBox.Location = new Point(3, 33);
+            cityComboBox.Location = new Point(3, 44);
+            cityComboBox.Margin = new Padding(3, 4, 3, 4);
             cityComboBox.Name = "cityComboBox";
-            cityComboBox.Size = new Size(271, 23);
+            cityComboBox.Size = new Size(309, 28);
             cityComboBox.TabIndex = 2;
             cityComboBox.SelectedIndexChanged += cityComboBox_SelectedIndexChanged;
             // 
             // FormMain
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
             Controls.Add(tableLayoutPanel1);
             MainMenuStrip = menuStrip1;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "FormMain";
             Text = "Университеты";
             tableLayoutPanel1.ResumeLayout(false);
