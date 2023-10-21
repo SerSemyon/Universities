@@ -32,13 +32,14 @@
             tableLayoutPanel2 = new TableLayoutPanel();
             labelName = new Label();
             labelCity = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            textBoxName = new TextBox();
+            textBoxCity = new TextBox();
             labelUniversity = new Label();
             pictureBox = new PictureBox();
             splitContainer1 = new SplitContainer();
             buttonSave = new Button();
             buttonCancel = new Button();
+            openFileDialog1 = new OpenFileDialog();
             mainTableLayoutPanel.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox).BeginInit();
@@ -72,8 +73,8 @@
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 67.75819F));
             tableLayoutPanel2.Controls.Add(labelName, 0, 1);
             tableLayoutPanel2.Controls.Add(labelCity, 0, 2);
-            tableLayoutPanel2.Controls.Add(textBox1, 1, 1);
-            tableLayoutPanel2.Controls.Add(textBox2, 1, 2);
+            tableLayoutPanel2.Controls.Add(textBoxName, 1, 1);
+            tableLayoutPanel2.Controls.Add(textBoxCity, 1, 2);
             tableLayoutPanel2.Controls.Add(labelUniversity, 1, 0);
             tableLayoutPanel2.Dock = DockStyle.Fill;
             tableLayoutPanel2.Location = new Point(3, 3);
@@ -103,21 +104,21 @@
             labelCity.TabIndex = 1;
             labelCity.Text = "Город";
             // 
-            // textBox1
+            // textBoxName
             // 
-            textBox1.Dock = DockStyle.Fill;
-            textBox1.Location = new Point(259, 33);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(532, 23);
-            textBox1.TabIndex = 2;
+            textBoxName.Dock = DockStyle.Fill;
+            textBoxName.Location = new Point(259, 33);
+            textBoxName.Name = "textBoxName";
+            textBoxName.Size = new Size(532, 23);
+            textBoxName.TabIndex = 2;
             // 
-            // textBox2
+            // textBoxCity
             // 
-            textBox2.Dock = DockStyle.Fill;
-            textBox2.Location = new Point(259, 63);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(532, 23);
-            textBox2.TabIndex = 3;
+            textBoxCity.Dock = DockStyle.Fill;
+            textBoxCity.Location = new Point(259, 63);
+            textBoxCity.Name = "textBoxCity";
+            textBoxCity.Size = new Size(532, 23);
+            textBoxCity.TabIndex = 3;
             // 
             // labelUniversity
             // 
@@ -136,8 +137,10 @@
             pictureBox.Location = new Point(3, 99);
             pictureBox.Name = "pictureBox";
             pictureBox.Size = new Size(794, 308);
+            pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox.TabIndex = 1;
             pictureBox.TabStop = false;
+            pictureBox.Click += pictureBox_Click;
             // 
             // splitContainer1
             // 
@@ -166,6 +169,7 @@
             buttonSave.TabIndex = 0;
             buttonSave.Text = "Сохранить";
             buttonSave.UseVisualStyleBackColor = true;
+            buttonSave.Click += buttonSave_Click;
             // 
             // buttonCancel
             // 
@@ -176,6 +180,11 @@
             buttonCancel.TabIndex = 0;
             buttonCancel.Text = "Отменить";
             buttonCancel.UseVisualStyleBackColor = true;
+            buttonCancel.Click += buttonCancel_Click;
+            // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "openFileDialog1";
             // 
             // FormUniversity
             // 
@@ -202,12 +211,13 @@
         private TableLayoutPanel tableLayoutPanel2;
         private Label labelName;
         private Label labelCity;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox textBoxName;
+        private TextBox textBoxCity;
         private Label labelUniversity;
         private PictureBox pictureBox;
         private SplitContainer splitContainer1;
         private Button buttonSave;
         private Button buttonCancel;
+        private OpenFileDialog openFileDialog1;
     }
 }

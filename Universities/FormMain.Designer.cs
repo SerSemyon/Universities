@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             tableLayoutPanel1 = new TableLayoutPanel();
-            dataGridView1 = new DataGridView();
+            dataGridViewUniversities = new DataGridView();
             menuStrip1 = new MenuStrip();
             addToolStripMenuItem = new ToolStripMenuItem();
             changeToolStripMenuItem = new ToolStripMenuItem();
@@ -37,7 +37,7 @@
             exitToolStripMenuItem = new ToolStripMenuItem();
             cityComboBox = new ComboBox();
             tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewUniversities).BeginInit();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -45,7 +45,7 @@
             // 
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Controls.Add(dataGridView1, 0, 2);
+            tableLayoutPanel1.Controls.Add(dataGridViewUniversities, 0, 2);
             tableLayoutPanel1.Controls.Add(menuStrip1, 0, 0);
             tableLayoutPanel1.Controls.Add(cityComboBox, 0, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
@@ -58,15 +58,18 @@
             tableLayoutPanel1.Size = new Size(800, 450);
             tableLayoutPanel1.TabIndex = 0;
             // 
-            // dataGridView1
+            // dataGridViewUniversities
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(3, 63);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(794, 384);
-            dataGridView1.TabIndex = 0;
+            dataGridViewUniversities.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewUniversities.Dock = DockStyle.Fill;
+            dataGridViewUniversities.Location = new Point(3, 63);
+            dataGridViewUniversities.MultiSelect = false;
+            dataGridViewUniversities.Name = "dataGridViewUniversities";
+            dataGridViewUniversities.ReadOnly = true;
+            dataGridViewUniversities.RowTemplate.Height = 25;
+            dataGridViewUniversities.Size = new Size(794, 384);
+            dataGridViewUniversities.TabIndex = 0;
+            dataGridViewUniversities.CellContentClick += dataGridViewUniversities_CellContentClick;
             // 
             // menuStrip1
             // 
@@ -82,24 +85,28 @@
             addToolStripMenuItem.Name = "addToolStripMenuItem";
             addToolStripMenuItem.Size = new Size(71, 20);
             addToolStripMenuItem.Text = "Добавить";
+            addToolStripMenuItem.Click += addToolStripMenuItem_Click;
             // 
             // changeToolStripMenuItem
             // 
             changeToolStripMenuItem.Name = "changeToolStripMenuItem";
             changeToolStripMenuItem.Size = new Size(73, 20);
             changeToolStripMenuItem.Text = "Изменить";
+            changeToolStripMenuItem.Click += changeToolStripMenuItem_Click;
             // 
             // deleteToolStripMenuItem
             // 
             deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             deleteToolStripMenuItem.Size = new Size(63, 20);
             deleteToolStripMenuItem.Text = "Удалить";
+            deleteToolStripMenuItem.Click += deleteToolStripMenuItem_Click;
             // 
             // exitToolStripMenuItem
             // 
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             exitToolStripMenuItem.Size = new Size(54, 20);
             exitToolStripMenuItem.Text = "Выход";
+            exitToolStripMenuItem.Click += exitToolStripMenuItem_Click_1;
             // 
             // cityComboBox
             // 
@@ -108,6 +115,7 @@
             cityComboBox.Name = "cityComboBox";
             cityComboBox.Size = new Size(271, 23);
             cityComboBox.TabIndex = 2;
+            cityComboBox.SelectedIndexChanged += cityComboBox_SelectedIndexChanged;
             // 
             // FormMain
             // 
@@ -120,7 +128,7 @@
             Text = "Университеты";
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewUniversities).EndInit();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
@@ -129,7 +137,7 @@
         #endregion
 
         private TableLayoutPanel tableLayoutPanel1;
-        private DataGridView dataGridView1;
+        private DataGridView dataGridViewUniversities;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem addToolStripMenuItem;
         private ToolStripMenuItem changeToolStripMenuItem;

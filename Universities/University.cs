@@ -3,26 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Xml.Linq;
 
 namespace Universities
 {
-    public class University
-    {
-        public string name;
-        public string city;
-        public string? imagePath;
-        
-        public University(string name, string city) 
-        {
-            this.name = name;
-            this.city = city;
-        }
 
-        public University(string name, string city, string filePath)
-        {
-            this.name = name;
-            this.city = city;
-            imagePath = filePath;
-        }
+    public struct University
+    {
+        public int id { get; set; }
+        public string name { get; set; }
+        public string cityName { get; set; }
     }
 }
